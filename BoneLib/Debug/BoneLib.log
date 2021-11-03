@@ -1,5 +1,4 @@
 ﻿  main.cpp
-C:\Users\charl\source\repos\BoneLib\BoneLib\main.cpp(8,55): warning C4305: 'argument': truncation from 'double' to 'float'
   maths.cpp
   Generating Code...
   BoneLib.vcxproj -> C:\Users\charl\source\repos\BoneLib\Debug\BoneLib.exe
