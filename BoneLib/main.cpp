@@ -3,9 +3,12 @@
 
 int main()
 {
-	Maths::Vector3D vec1(4, 12, 4);
-	Maths::Vector3D vec2(7, 2, 5);
-	Maths::Vector3D result = vec1.Cross(vec2);
-	std::cout << result.x << " " << result.y << " " << result.z;
+	Maths::Vector2D vec1(3, 7);
+	Maths::Vector2D vec2(3, 5);
+	std::cout << vec1.Magnitude() << std::endl;
+	std::cout << vec2.Magnitude() << std::endl;
+	std::cout << acos(44.42);
+	std::cout << Maths::Degrees(vec1.Angle(vec2)) << std::endl;
+	std::cout << Maths::Radians(56.7);
 	return 0;
 }

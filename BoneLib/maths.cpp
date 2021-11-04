@@ -13,6 +13,16 @@ Maths::Vector2D Maths::lerp(Maths::Vector2D a, Maths::Vector2D b, float t)
 	return result;
 }
 
+float Maths::Degrees(float r)
+{
+	return r * 180 / 3.14;
+}
+
+float Maths::Radians(float d)
+{
+	return d * 3.14 / 180;
+}
+
 Maths::Vector3D Maths::lerp(Maths::Vector3D a, Maths::Vector3D b, float t)
 {
 	// Interpolate all the components of the vector.
@@ -28,6 +38,11 @@ float Maths::Vector3D::Dot(Maths::Vector3D other)
 	return (this->x * other.x) + (this->y * other.y) + (this->z * other.z);
 }
 
+float Maths::Vector3D::Magnitude()
+{
+	return std::sqrt(this->x*this->x + this->y*this->y + this->z*this->z);
+}
+
 Maths::Vector3D Maths::Vector3D::Cross(Maths::Vector3D other)
 {
 	float X = this->y * other.z - this->z * other.y;
@@ -40,4 +55,18 @@ Maths::Vector3D Maths::Vector3D::Cross(Maths::Vector3D other)
 float Maths::Vector2D::Dot(Maths::Vector2D other)
 {
 	return (this->x * other.x) + (this->y * other.y);
+}
+
+float Maths::Vector2D::Magnitude()
+{
+	return abs(std::sqrt(this->x*this->x + this->y*this->y));
+}
+
+float Maths::Vector2D::Angle(Maths::Vector2D other)
+{
+	float dotProd = this->Dot(other);
+	float vecOneMag = this->Magnitude();
+	float vecTwoMag = this->Magnitude();
+	float angle = dotProd / vecOneMag * vecTwoMag;
+	return abs(cos(angle));
 }

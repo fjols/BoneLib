@@ -1,4 +1,6 @@
 #pragma once
+#include <math.h>
+#include <cmath>
 
 namespace Maths
 {
@@ -10,7 +12,9 @@ namespace Maths
 			y = y_;
 		};
 
-		float Dot(Vector2D other);
+		float Dot(Vector2D other); //!< Get the dot product of two 2D vectors.
+		float Magnitude(); //!< Get the magnitude of the vector.
+		float Angle(Vector2D other); //!< Get the angle between 2 vectors.
 
 		float x;
 		float y;
@@ -22,10 +26,13 @@ namespace Maths
 			x = x_;
 			y = y_;
 			z = z_;
-		};
+		}
 
-		float Dot(Vector3D other);
-		Vector3D Cross(Vector3D other);
+
+		float Dot(Vector3D other); //!< Get the dot product of two 3D vectors.
+		float Magnitude(); //!< Get the magnitude of the vector.
+		Vector3D Cross(Vector3D other); //!< Get the cross product of two 3D vectors.
+		
 
 		float x;
 		float y;
@@ -34,4 +41,6 @@ namespace Maths
 	float lerp(float start, float end, float t); //!< Lerp function for floats.
 	Vector2D lerp(Vector2D a, Vector2D b, float t); //!< Lerp function for Vector2D.
 	Vector3D lerp(Vector3D a, Vector3D b, float t); //!< Lerp function for Vector3D.
+	float Degrees(float r); //!< Convert to degrees.
+	float Radians(float d); //!< Convert to radians.
 }
