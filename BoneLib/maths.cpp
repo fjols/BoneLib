@@ -23,6 +23,62 @@ float Maths::Radians(float d)
 	return d * 3.14 / 180;
 }
 
+void Maths::Vector3D::Zero()
+{
+	Vector3D v(0, 0, 0);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Back()
+{
+	Vector3D v(0, 0, -1);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Down()
+{
+	Vector3D v(0, -1, 0);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Forward()
+{
+	Vector3D v(0, 0, 1);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Left()
+{
+	Vector3D v(-1, 0, 0);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::One()
+{
+	Vector3D v(1, 1, 1);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Right()
+{
+	Vector3D v(1, 0, 0);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
 Maths::Vector3D Maths::lerp(Maths::Vector3D a, Maths::Vector3D b, float t)
 {
 	// Interpolate all the components of the vector.

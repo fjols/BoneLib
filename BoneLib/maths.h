@@ -32,6 +32,15 @@ namespace Maths
 		float Dot(Vector3D other); //!< Get the dot product of two 3D vectors.
 		float Magnitude(); //!< Get the magnitude of the vector.
 		Vector3D Cross(Vector3D other); //!< Get the cross product of two 3D vectors.
+
+		void Back();
+		void Down();
+		void Forward();
+		void Left();
+		void One();
+		void Right();
+		void Up();
+		void Zero();
 		
 
 		float x;

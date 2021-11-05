@@ -1,4 +1,2 @@
-﻿  maths.cpp
-C:\Users\charl\source\repos\BoneLib\BoneLib\maths.cpp(18,17): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\charl\source\repos\BoneLib\BoneLib\maths.cpp(23,18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+﻿  main.cpp
   BoneLib.vcxproj -> C:\Users\charl\source\repos\BoneLib\Debug\BoneLib.exe
