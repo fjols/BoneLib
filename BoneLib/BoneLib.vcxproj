@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maths.h" />
+    <ClInclude Include="physics.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
