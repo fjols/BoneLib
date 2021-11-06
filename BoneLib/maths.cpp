@@ -128,11 +128,24 @@ Maths::Vector3D Maths::Vector3D::Cross(Maths::Vector3D other)
 	return result;
 }
 
-Maths::Vector3D Maths::Vector3D::operator+(Vector3D other)
+Maths::Vector3D Maths::Vector3D::operator+(const Vector3D& other)
 {
 	return Maths::Vector3D(this->x + other.x, this->y + other.y, this->z + other.z);
 }
 
+Maths::Vector3D Maths::Vector3D::operator+=(const Vector3D& other)
+{
+	this->x += other.x;
+	this->y += other.y;
+	this->z += other.z;
+	return *this;
+}
+
+
+Vector2D Maths::Vector2D::getVector2D()
+{
+	return Vector2D();
+}
 
 float Maths::Vector2D::Dot(Maths::Vector2D other)
 {
