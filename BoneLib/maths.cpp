@@ -23,6 +23,18 @@ float Maths::Radians(float d)
 	return d * 3.14 / 180;
 }
 
+std::ostream& Maths::operator<<(std::ostream& os, const Maths::Vector3D vec)
+{
+	os << "x: " << vec.x << " | " << "y: " << vec.y << " | " << "z: " << vec.z;
+	return os;
+}
+
+std::ostream& Maths::operator<<(std::ostream& os, const Maths::Vector2D vec)
+{
+	os << "x: " << vec.x << " | " << "y: " << vec.y;
+	return os;
+}
+
 void Maths::Vector3D::Zero()
 {
 	Vector3D v(0, 0, 0);
@@ -42,6 +54,14 @@ void Maths::Vector3D::Back()
 void Maths::Vector3D::Down()
 {
 	Vector3D v(0, -1, 0);
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+}
+
+void Maths::Vector3D::Up()
+{
+	Vector3D v(0, 1, 0);
 	this->x = v.x;
 	this->y = v.y;
 	this->z = v.z;
@@ -108,6 +128,12 @@ Maths::Vector3D Maths::Vector3D::Cross(Maths::Vector3D other)
 	return result;
 }
 
+Maths::Vector3D Maths::Vector3D::operator+(Vector3D other)
+{
+	return Maths::Vector3D(this->x + other.x, this->y + other.y, this->z + other.z);
+}
+
+
 float Maths::Vector2D::Dot(Maths::Vector2D other)
 {
 	return (this->x * other.x) + (this->y * other.y);
@@ -125,4 +151,9 @@ float Maths::Vector2D::Angle(Maths::Vector2D other)
 	float vecTwoMag = this->Magnitude();
 	float angle = dotProd / vecOneMag * vecTwoMag;
 	return abs(cos(angle));
+}
+
+Maths::Vector2D Maths::Vector2D::operator+(Vector2D other)
+{
+	return Maths::Vector2D(this->x + other.x, this->y + other.y);
 }

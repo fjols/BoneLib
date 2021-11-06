@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
 #include <cmath>
+#include<iostream>
 
 namespace Maths
 {
@@ -15,6 +16,7 @@ namespace Maths
 		float Dot(Vector2D other); //!< Get the dot product of two 2D vectors.
 		float Magnitude(); //!< Get the magnitude of the vector.
 		float Angle(Vector2D other); //!< Get the angle between 2 vectors.
+		Vector2D operator+(Vector2D other);
 
 		float x;
 		float y;
@@ -32,6 +34,9 @@ namespace Maths
 		float Dot(Vector3D other); //!< Get the dot product of two 3D vectors.
 		float Magnitude(); //!< Get the magnitude of the vector.
 		Vector3D Cross(Vector3D other); //!< Get the cross product of two 3D vectors.
+		Vector3D operator+(Vector3D other);
+		
+		
 
 		void Back();
 		void Down();
@@ -52,4 +57,6 @@ namespace Maths
 	Vector3D lerp(Vector3D a, Vector3D b, float t); //!< Lerp function for Vector3D.
 	float Degrees(float r); //!< Convert to degrees.
 	float Radians(float d); //!< Convert to radians.
+	std::ostream& operator<<(std::ostream& os, const Maths::Vector3D vec);
+	std::ostream& operator<<(std::ostream& os, const Maths::Vector2D vec);
 }
