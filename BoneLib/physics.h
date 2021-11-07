@@ -25,6 +25,11 @@ struct rotation {
 		cosine = cosf(angle);
 	}
 
+	rotation Get()
+	{
+		return *this;
+	}
+
 	void setIdentity()
 	{
 		sine = 0.0f;

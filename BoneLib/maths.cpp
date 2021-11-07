@@ -142,11 +142,6 @@ Maths::Vector3D Maths::Vector3D::operator+=(const Vector3D& other)
 }
 
 
-Vector2D Maths::Vector2D::getVector2D()
-{
-	return Vector2D();
-}
-
 float Maths::Vector2D::Dot(Maths::Vector2D other)
 {
 	return (this->x * other.x) + (this->y * other.y);

@@ -1,12 +1,11 @@
 #include "maths.h"
+#include "application.h"
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-	Maths::Vector3D myVec;
-	Maths::Vector3D otherVec(3, 6, 7);
-	
-	myVec += otherVec;
-	std::cout << myVec;
+	Engine::Application app;
+	app.run();
 	return 0;
 }
