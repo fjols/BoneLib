@@ -4,6 +4,7 @@
 #pragma once
 #include<string>
 #include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 #include "maths.h"
 #include "engine.h"
 
@@ -12,29 +13,22 @@ namespace Engine
 	struct WindowProps
 	{
 		std::string m_sName; //!< Name or titel of the window.
-		Maths::Vector2D m_size; //!< Size of the window.
+		int x;
+		int y;
 		Maths::Vector2D m_storedSize; //!< Stored size of window. Used when exiting fullscreen.
-		bool m_bFullScreen; //!< Is the window fullscreen or not?
+		//bool m_bFullScreen; //!< Is the window fullscreen or not?
 
-		WindowProps(const std::string& name = "game", Maths::Vector2D size = Maths::Vector2D(700, 700)) : m_sName(name), m_size(size) {}
+		WindowProps(const std::string& name = "game", int x_ = 700, int y_ = 700) : m_sName(name), x(x_), y(y_) {}
 	};
 
 	class Window
 	{
 	public:
-		void initialise(const Engine::WindowProps& props)
-		{
-			sf::Window window(sf::VideoMode(700, 700), props.m_sName);
-			while (window.isOpen())
-			{
-				sf::Event e;
-				while (window.pollEvent(e))
-				{
+		virtual void initialise(const Engine::WindowProps& props) = 0;
+		virtual void close() = 0;
+		virtual void resize() = 0;
+		virtual void onUpdate(float timestep) = 0;
 
-					if (e.type == sf::Event::Closed)
-						window.close();
-				}
-			}
-		}
+		static Window* create(const WindowProps& props = WindowProps());
 	};
 }

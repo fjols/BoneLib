@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{63ae1ade-9842-4cb5-be5e-d9c78be38eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems">
+      <UniqueIdentifier>{a4cf7dd1-03fb-4158-a446-876a21a039d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems\SFML">
+      <UniqueIdentifier>{bf2d2100-03df-4eac-ace5-1458b9798e14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systems\SFML">
+      <UniqueIdentifier>{09ae91f5-a192-4327-b495-315a1691fbde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maths.h">
@@ -28,7 +40,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="window.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLWindow.h">
+      <Filter>Header Files\Systems\SFML</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +61,12 @@
     </ClCompile>
     <ClCompile Include="application.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Source Files\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLWindow.cpp">
+      <Filter>Source Files\Systems\SFML</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

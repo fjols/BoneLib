@@ -8,14 +8,23 @@ namespace Engine
 		if (s_instance == nullptr)
 			s_instance = this;
 		m_bIsRunning = true;
-		window.initialise(properties);
+		m_log = Engine::Log::getInstance();
+		m_log->start();
+		
+		window->initialise(properties);
+		LOG_MSG("WINDOWS SYSTEM INITIALISED");
 	}
 
 	void Application::run()
 	{
 		while (m_bIsRunning)
 		{
-			std::cout << "running" << std::endl;
+			LOG_MSG("hello");
 		}
+	}
+
+	Application::~Application()
+	{
+		m_log->stop();
 	}
 }

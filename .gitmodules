@@ -1,0 +1,3 @@
+[submodule "Bonelib/vendor/spdlog"]
+	path = Bonelib/vendor/spdlog
+	url = https://github.com/gabime/spdlog

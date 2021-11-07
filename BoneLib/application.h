@@ -1,5 +1,6 @@
 #pragma once
 #include "engine.h"
+#include "log.h"
 
 namespace Engine
 {
@@ -10,10 +11,11 @@ namespace Engine
 	private:
 		static Application* s_instance; //!< Application instance.
 		bool m_bIsRunning;
-		Engine::Window window;
+		std::shared_ptr<Engine::Window> window;
 		Engine::WindowProps properties;
+		std::shared_ptr<Engine::Log> m_log;
 	public:
-		//virtual ~Application();
+		virtual ~Application();
 		inline static Application& getInstance() { return *s_instance; } //!< Return the instance.
 		void run(); //!< Run the application.
 	};
