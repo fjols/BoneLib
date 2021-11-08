@@ -26,6 +26,7 @@
     <ClInclude Include="physics.h" />
     <ClInclude Include="SFMLWindow.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="timer.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="SFMLWindow.cpp" />
+    <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -51,6 +51,9 @@
     <ClInclude Include="SFMLWindow.h">
       <Filter>Header Files\Systems\SFML</Filter>
     </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="maths.cpp">
@@ -67,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="SFMLWindow.cpp">
       <Filter>Source Files\Systems\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Source Files\Systems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

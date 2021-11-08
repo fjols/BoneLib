@@ -5,6 +5,7 @@
 #include<string>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "timer.h"
 #include "maths.h"
 #include "engine.h"
 
@@ -26,9 +27,9 @@ namespace Engine
 	public:
 		virtual void initialise(const Engine::WindowProps& props) = 0;
 		virtual void close() = 0;
-		virtual void resize() = 0;
+		virtual void resize(int x, int y) = 0;
 		virtual void onUpdate(float timestep) = 0;
 
-		static Window* create(const WindowProps& props = WindowProps());
+		static Window* createWindow(const WindowProps& props = WindowProps());
 	};
 }

@@ -10,21 +10,23 @@ namespace Engine
 		m_bIsRunning = true;
 		m_log = Engine::Log::getInstance();
 		m_log->start();
-		
-		window->initialise(properties);
+		window.reset(Window::createWindow());
 		LOG_MSG("WINDOWS SYSTEM INITIALISED");
+		TIMER_NEWFRAME;
 	}
 
 	void Application::run()
 	{
 		while (m_bIsRunning)
 		{
-			LOG_MSG("hello");
+			m_fTimestep = TIMER_NEWFRAME;
+			window->onUpdate(m_fTimestep);
 		}
 	}
 
 	Application::~Application()
 	{
 		m_log->stop();
+		window->close();
 	}
 }
