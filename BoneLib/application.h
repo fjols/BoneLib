@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "timer.h"
 #include "event.h"
+#include "windowEvents.h"
 
 namespace Engine
 {
@@ -26,6 +27,7 @@ namespace Engine
 		inline static Application& getInstance() { return *s_instance; } //!< Return the instance.
 		void run(); //!< Run the application.
 		void onEvent(Event& e);
-		void onClose();
+		bool onClose(WindowCloseEvent& e);
+		bool onResize(WindowResizeEvent& e);
 	};
 }

@@ -27,11 +27,22 @@ namespace Engine
 	void Application::onEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
+		dispatcher.dispatch<WindowCloseEvent>(std::bind(&Application::onClose, this, std::placeholders::_1));
+		dispatcher.dispatch<WindowResizeEvent>(std::bind(&Application::onResize, this, std::placeholders::_1));
 	}
 
-	void Application::onClose()
+	bool Application::onClose(WindowCloseEvent& e)
 	{
+		LOG_MSG("Window Closing");
+		m_bIsRunning = false;
+		return true;
+	}
 
+	bool Application::onResize(WindowResizeEvent& e)
+	{
+		LOG_MSG("WINDOW RESIZE: WIDTH {0}, HEIGHT {1}", e.getWidth(), e.getHeight());
+		window->resize(e.getWidth(), e.getHeight());
+		return true;
 	}
 
 	Application::~Application()

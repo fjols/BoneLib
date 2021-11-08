@@ -60,6 +60,9 @@
     <ClInclude Include="event.h">
       <Filter>Header Files\Systems\Events</Filter>
     </ClInclude>
+    <ClInclude Include="windowEvents.h">
+      <Filter>Header Files\Systems\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="maths.cpp">

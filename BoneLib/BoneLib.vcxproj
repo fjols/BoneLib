@@ -29,6 +29,7 @@
     <ClInclude Include="system.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="window.h" />
+    <ClInclude Include="windowEvents.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp" />
