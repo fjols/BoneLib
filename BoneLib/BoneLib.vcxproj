@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="event.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="maths.h" />
     <ClInclude Include="physics.h" />

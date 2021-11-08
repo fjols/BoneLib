@@ -5,6 +5,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "timer.h"
+#include "event.h"
 
 namespace Engine
 {
@@ -24,5 +25,7 @@ namespace Engine
 		virtual ~Application();
 		inline static Application& getInstance() { return *s_instance; } //!< Return the instance.
 		void run(); //!< Run the application.
+		void onEvent(Event& e);
+		void onClose();
 	};
 }

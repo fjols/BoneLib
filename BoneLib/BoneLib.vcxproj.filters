@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Systems\SFML">
       <UniqueIdentifier>{09ae91f5-a192-4327-b495-315a1691fbde}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Systems\Events">
+      <UniqueIdentifier>{191b6ac3-f34e-4bd0-8f50-dd7702ddbd7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="maths.h">
@@ -53,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="timer.h">
       <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>Header Files\Systems\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,16 @@ namespace Engine
 		}
 	}
 
+	void Application::onEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+	}
+
+	void Application::onClose()
+	{
+
+	}
+
 	Application::~Application()
 	{
 		m_log->stop();
