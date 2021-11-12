@@ -63,6 +63,12 @@
     <ClInclude Include="windowEvents.h">
       <Filter>Header Files\Systems\Events</Filter>
     </ClInclude>
+    <ClInclude Include="SFMLInputPoller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inputPoller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="maths.cpp">
@@ -82,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="timer.cpp">
       <Filter>Source Files\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLInputPoller.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

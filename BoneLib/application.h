@@ -22,6 +22,7 @@ namespace Engine
 		std::shared_ptr<Engine::Log> m_log;
 		float m_fTimeElapsed;
 		float m_fTimestep;
+		sf::Event ev;
 	public:
 		virtual ~Application();
 		inline static Application& getInstance() { return *s_instance; } //!< Return the instance.
@@ -29,5 +30,6 @@ namespace Engine
 		void onEvent(Event& e);
 		bool onClose(WindowCloseEvent& e);
 		bool onResize(WindowResizeEvent& e);
+		inline Engine::Window& getWindow() { return *window; }
 	};
 }

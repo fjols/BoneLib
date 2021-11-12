@@ -17,6 +17,7 @@ namespace Engine
 		unsigned int m_uiWindowWidth;
 		Engine::WindowProps m_properties;
 		sf::Event e;
+		std::function<void(Event&)> m_callback;
 	public:
 		SFMLWindowImpl(const Engine::WindowProps& props);
 		~SFMLWindowImpl();
@@ -24,6 +25,8 @@ namespace Engine
 		void close() override;
 		void resize(int x, int y) override;
 		void onUpdate(float timestep) override;
+		inline void* getNativeWindow() const override { return static_cast<void*>(m_nativeWindow.get()); }
+		void setEventCallback(const std::function<void(Event&)>& callback) override;
 
 	};
 }

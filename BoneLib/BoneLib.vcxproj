@@ -22,9 +22,11 @@
     <ClInclude Include="application.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="event.h" />
+    <ClInclude Include="inputPoller.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="maths.h" />
     <ClInclude Include="physics.h" />
+    <ClInclude Include="SFMLInputPoller.h" />
     <ClInclude Include="SFMLWindow.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="timer.h" />
@@ -36,6 +38,7 @@
     <ClCompile Include="log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="maths.cpp" />
+    <ClCompile Include="SFMLInputPoller.cpp" />
     <ClCompile Include="SFMLWindow.cpp" />
     <ClCompile Include="timer.cpp" />
   </ItemGroup>

@@ -11,6 +11,7 @@ namespace Engine
 		m_log = Engine::Log::getInstance();
 		m_log->start();
 		window.reset(Window::createWindow());
+		window->setEventCallback(std::bind(&Application::onEvent, this, std::placeholders::_1));
 		LOG_MSG("WINDOWS SYSTEM INITIALISED");
 		TIMER_NEWFRAME;
 	}
@@ -27,8 +28,8 @@ namespace Engine
 	void Application::onEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.dispatch<WindowCloseEvent>(std::bind(&Application::onClose, this, std::placeholders::_1));
-		dispatcher.dispatch<WindowResizeEvent>(std::bind(&Application::onResize, this, std::placeholders::_1));
+		dispatcher.dispatch<WindowCloseEvent>(std::bind(&Application::onClose, this, std::placeholders::_1)); // Dispatch the window close event 
+		dispatcher.dispatch<WindowResizeEvent>(std::bind(&Application::onResize, this, std::placeholders::_1)); // Dispatch the window resize event
 	}
 
 	bool Application::onClose(WindowCloseEvent& e)
@@ -40,7 +41,8 @@ namespace Engine
 
 	bool Application::onResize(WindowResizeEvent& e)
 	{
-		LOG_MSG("WINDOW RESIZE: WIDTH {0}, HEIGHT {1}", e.getWidth(), e.getHeight());
+		if(ev.type == sf::Event::Resized)
+			LOG_MSG("WINDOW RESIZE: WIDTH {0}, HEIGHT {1}", e.getWidth(), e.getHeight());
 		window->resize(e.getWidth(), e.getHeight());
 		return true;
 	}

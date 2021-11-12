@@ -48,6 +48,11 @@ namespace Engine
 		m_nativeWindow->display();
 	}
 
+	void SFMLWindowImpl::setEventCallback(const std::function<void(Event&)>& callback)
+	{
+		m_callback = callback;
+	}
+
 	void SFMLWindowImpl::resize(int x, int y)
 	{
 		m_properties.x = x;

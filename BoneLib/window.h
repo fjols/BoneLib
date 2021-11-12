@@ -5,9 +5,11 @@
 #include<string>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <functional>
 #include "timer.h"
 #include "maths.h"
 #include "engine.h"
+#include "event.h"
 
 namespace Engine
 {
@@ -29,7 +31,8 @@ namespace Engine
 		virtual void close() = 0;
 		virtual void resize(int x, int y) = 0;
 		virtual void onUpdate(float timestep) = 0;
-
+		virtual void* getNativeWindow() const = 0;
+		virtual void setEventCallback(const std::function<void(Event&)>& callback) = 0;
 		static Window* createWindow(const WindowProps& props = WindowProps());
 	};
 }
